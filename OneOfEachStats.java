@@ -66,8 +66,8 @@ public class OneOfEachStats {
 		}
 
 		System.out.println("Average: " + average + " children to get at least one of each gender. \nNumber of families with 2 children: " + 
-							twoChildren + "Number of families with 3 children: " + threeChildren + "Number of families with 4 children: " +
-							fourOrMoreChildren + "The most common number of children is " + mostCommon + ".");
+							twoChildren + "\nNumber of families with 3 children: " + threeChildren + "\nNumber of families with 4 children: " +
+							fourOrMoreChildren + "\nThe most common number of children is " + mostCommon + ".");
 		    
 	}
 }
