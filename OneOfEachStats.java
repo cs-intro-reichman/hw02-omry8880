@@ -15,15 +15,61 @@ public class OneOfEachStats {
 		// Initailizes a random numbers generator with the given seed value
         Random generator = new Random(seed);  
 		
-		//// In the previous version of this program, you used a statement like:
-		//// double rnd = Math.random();
-		//// Where "rnd" is the variable that stores the generated random value.
-		//// In this version of the program, replace this statement with:
-		//// double rnd = generator.nextDouble();
-		//// This statement will generate a random value in the range [0,1),
-		//// just like you had in the previous version, except that the 
-		//// randomization will be based on the given seed.
-		//// This is the only change that you have to do in the program.
+		double child;
+		int count = 0;
+
+		boolean girl = false;
+		boolean boy = false;
+
+		// New variables
+		double average;
+		String mostCommon;
+		int twoChildren = 0;
+		int threeChildren = 0;
+		int fourOrMoreChildren = 0;
+		int totalChildren = 0;
+
+		for (int i = 0; i < T; i++) {
+			count = 0;
+			girl = false;
+			boy = false;
+			while (!(girl && boy)) {
+				child = generator.nextDouble();
+				if (child > 0.5) {
+					girl = true;
+				} else { 
+					boy = true;
+				}
+				count++;
+			}
+			totalChildren += count;
+			if (count == 2) {
+				twoChildren += 1;
+			}
+			else if (count == 3) {
+				threeChildren += 1;
+			} else {
+				fourOrMoreChildren += 1;
+			}
+
+		}
+		average = Double.valueOf(totalChildren) / Double.valueOf(T);
+
+		if (twoChildren > threeChildren && twoChildren > fourOrMoreChildren) {
+			mostCommon = "2";
+		}
+		else if (threeChildren > twoChildren && threeChildren > fourOrMoreChildren) {
+			mostCommon = "3";
+		}
+		else {
+			mostCommon = "4 or more";
+		}
+
+		System.out.println("Average: " + average + " children to get at least one of each gender.");
+		System.out.println("Number of families with 2 children: " + twoChildren);
+		System.out.println("Number of families with 3 children: " + threeChildren);
+		System.out.println("Number of families with 4 children: " + fourOrMoreChildren);
+		System.out.println("The most common number of children is " + mostCommon + ".");
 		    
 	}
 }
