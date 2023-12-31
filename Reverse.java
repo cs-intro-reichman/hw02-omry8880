@@ -7,7 +7,7 @@ public class Reverse {
 		String str = args[0];
 
 		int j = str.length();
-		int middle = j%2==0 ? (j+1) / 2 : j / 2;
+		int middle = j%2==0 ? (j-1) / 2 : j / 2;
 		String reversed = "";
 
 		while (j != 0) {
