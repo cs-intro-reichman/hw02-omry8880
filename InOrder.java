@@ -4,16 +4,15 @@
  */
 public class InOrder {
 	public static void main (String[] args) {
-		double randomOne, randomTwo;
+		int random, followingRand;
 
-		randomOne = (int) (10 * Math.random());
-		randomTwo = (int) (10 * Math.random());
+		random = (int) (10 * Math.random());
 
-		do { 
-			System.out.println(randomOne);
-			System.out.println(randomOne < randomTwo ? randomTwo : "");
-			randomOne = (int) (10 * Math.random());
-			randomTwo = (int) (10 * Math.random());
-		} while (randomOne < randomTwo);
+		do {
+			followingRand = random;
+			System.out.println(followingRand);
+			random = (int) (10 * Math.random());
+
+		} while (followingRand < random);
 	}
 }
