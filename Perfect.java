@@ -10,7 +10,7 @@ public class Perfect {
 
 		while (i < input) {
 			i++;
-			if (input % i == 0 && i != input) {
+			if (input % i == 0 && i != input) { // #feedback - you can increase i after the if and then avoid having the "i != input" condition.
 				sum += i;
 				divisors += " + " + i;
 			}
