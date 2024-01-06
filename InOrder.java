@@ -13,6 +13,6 @@ public class InOrder {
 			System.out.println(followingRand);
 			random = (int) (10 * Math.random());
 
-		} while (followingRand < random);
+		} while (followingRand < random); // #feedback - should be >=
 	}
 }
